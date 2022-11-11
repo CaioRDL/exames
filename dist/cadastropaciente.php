@@ -13,7 +13,7 @@
     
     </head>
     <nav>
-        aq
+        
     </nav>
     <body class="bg-primary">
     <form action="crud_cadastrocliente.php" method="post">
@@ -30,37 +30,37 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                      <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Digite o ID do paciente" name="id"/>
+                                                        <input value="<?php echo @$cadastro_paciente['id']; ?>" class="form-control" id="inputFirstName" type="text" placeholder="Digite o ID do paciente" name="id"/>
                                                         <label for="id">Digite o ID do paciente</label>
                                                     </div>
 
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Digite o nome do Paciente" name="paciente"/>
+                                                        <input value="<?php echo @$cadastro_paciente['nome']; ?>" class="form-control" id="inputname" type="text" placeholder="Digite o nome do Paciente" name="paciente"/>
                                                         <label for="nome">Digite o nome do Paciente</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Nacionalidade" name="nacionalidade" />
+                                                        <input  value="<?php echo @$cadastro_paciente['nacionalidade']; ?>" class="form-control" id="inputnacionalidade" type="text" placeholder="Nacionalidade" name="nacionalidade" />
                                                         <label for="nacionalidade">Nacionalidade</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input type="text" name="idade" placeholder="Qual a Idade do paciente?">
-                                                <!-- <input class="form-control" id="inputEmail" type="email" placeholder="idade" name="idade"/> -->
+                                                
+                                                <input value="<?php echo @$cadastro_paciente['idade']; ?>" class="form-control" id="inputidade" type="text" placeholder="idade" name="idade"/> 
                                                 <label >Qual a idade do paciente?</label>
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPassword" type="date" placeholder="Data de Entrada" name="data" />
+                                                        <input  value="<?php echo @$cadastro_paciente['data']; ?>" class="form-control" id="inputdata" type="date" placeholder="Data de Entrada" name="data" />
                                                         <label for="data">Data de Entrada</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPasswordConfirm" type="number" placeholder="Digite o Peso do Paciente" name="peso"/>
+                                                        <input  value="<?php echo @$cadastro_paciente['peso']; ?>" class="form-control" id="inputpeso" type="number" placeholder="Digite o Peso do Paciente" name="peso"/>
                                                         <label for="peso">Digite o Peso do Paciente</label>
                                                     </div>
                                                 </div>
