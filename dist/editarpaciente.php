@@ -1,43 +1,49 @@
- <?php
-
+<?php
 include('conecta.php');
+$id=intval($_GET['id']);
 
-$id = intval($_GET['id']);
-
-if (count($_POST) > 0) {
-    $id = $_GET['id'];
-    $paciente = $_POST['paciente'];
-    $nacionalidade = $_POST['nacionalidade'];
-    $idade = $_POST['idade'];
-    $data = $_POST['data'];
-    $peso = $_POST['peso'];
+if(count($_POST)>0){
+$paciente=$_POST['paciente'];
+$nacionalidade=$_POST['nacionalidade'];
+$idade=$_POST['idade'];
+$data=$_POST['data'];
+$peso=$_POST['peso'];
 
 
-    $erro = '';
-    if (empty($paciente)) {
-        $erro = 'Preencha o título.';
-    }
-
-    if ($erro) {
-        echo "<p style='color: red;'>$erro</p>";
-    } else {
-        $sql = "UPDATE `cadastro_paciente` SET `paciente`='$paciente',`nacionalidade`='$nacionalidade',`idade`='$idade',`data`='$data',`peso`='$peso', WHERE `id` = '$id' ";
-    }
-
-    $dados_atualizados = $conexao->query($sql) or die($conexao->error);
-
-    if ($dados_atualizados) {
-        echo "<h1 style='color: aquamarine;'>Atualizado com sucesso!</h1>";
-    } else {
-        die("ERROR: Não atualizado! $sql");
-    }
+$erro= '';
+if(empty($paciente)){
+    $erro='preencha o paciente';
 }
+if($erro){
+    echo "<p style='colorred;'>$erro</p>";
 
-$sql_cadastro_paciente = "SELECT * FROM `cadastro_paciente` WHERE id = '$id'";
-$query_cadastro_paciente = $conexao->query($sql_cadastro_paciente) or die($conexao->error);
-$cadastro_paciente = $query_cadastro_paciente->fetch_assoc();
+
+}else{
+    $sql="UPDATE cadastro_paciente SET
+    paciente='$paciente',
+    nacionalidade='$nacionalidade',
+    idade='$idade',
+    data='$data',
+    peso='$peso'  WHERE id='$id' ";
+
+    $dados_atualizados=$conexao->query($sql)or die($conexao->error);
+    if($dados_atualizados){
+        echo "<h1 style='color:green;'>Atualizado com sucesso</h1>";
+    }else{ 
+        die("ERROR: nao atualizado $sql");
+        } 
+        } 
+        } 
+    
+     $sql_paciente ="SELECT * FROM cadastro_paciente WHERE id = '$id' ";
+     $query_paciente= $conexao->query($sql_paciente) or die($conexao->error);
+     $dados= $query_paciente->fetch_assoc();
+
 
 ?>
+
+    
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -55,7 +61,7 @@ $cadastro_paciente = $query_cadastro_paciente->fetch_assoc();
         
     </nav>
     <body class="bg-primary">
-    <form action="crud_cadastrocliente.php" method="post">
+    <form action="" method="post">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -65,47 +71,47 @@ $cadastro_paciente = $query_cadastro_paciente->fetch_assoc();
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Registro do Paciente</h3></div>
                                     <div class="card-body">
-                                        <form>
+                                        <form action="" method="POST">
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                      <div class="form-floating mb-3 mb-md-0">
-                                                        <input value="<?php echo @$cadastro_paciente['id']; ?>" class="form-control" id="inputFirstName" type="text" placeholder="Digite o ID do paciente" name="id"/>
+                                                        <input value="<?php echo $dados['id']; ?>" class="form-control" id="inputFirstName" type="text" placeholder="Digite o ID do paciente" name="id"/>
                                                         <label for="id">Digite o ID do paciente</label>
                                                     </div>
 
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input value="<?php echo @$cadastro_paciente['paciente']; ?>" class="form-control" id="inputnome" type="text" placeholder="Digite o nome do Paciente" name="paciente"/>
+                                                        <input value="<?php echo $dados['paciente']; ?>" class="form-control" id="inputnome" type="text" placeholder="Digite o nome do Paciente" name="paciente"/>
                                                         <label for="nome">Digite o nome do Paciente</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input value="<?php echo @$cadastro_paciente['nacionalidade']; ?>" class="form-control" id="inputnacionalidade" type="text" placeholder="Nacionalidade" name="nacionalidade" />
+                                                        <input value="<?php echo $dados['nacionalidade']; ?>" class="form-control" id="inputnacionalidade" type="text" placeholder="Nacionalidade" name="nacionalidade" />
                                                         <label for="nacionalidade">Nacionalidade</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-floating mb-3">
-                                            <input value="<?php echo @$cadastro_paciente['idade']; ?>" class="form-control" id="inputidade" type="number" placeholder="idade" name="idade"/>
+                                            <input value="<?php echo $dados['idade']; ?>" class="form-control" id="inputidade" type="number" placeholder="idade" name="idade"/>
                                                 <label >Qual a idade do paciente?</label>
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputdata" type="date" placeholder="Data de Entrada" name="data" />
+                                                        <input value="<?php echo $dados['data']; ?>" class="form-control" id="inputdata" type="date" placeholder="Data de Entrada" name="data" />
                                                         <label for="data">Data de Entrada</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputpeso" type="text" placeholder="Digite o Peso do Paciente" name="peso"/>
+                                                        <input value="<?php echo $dados['peso']; ?>" class="form-control" id="inputpeso" type="text" placeholder="Digite o Peso do Paciente" name="peso"/>
                                                         <label for="peso">Digite o Peso do Paciente</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mt-4 mb-0">
                                                 <!-- <div class="d-grid"><a class="btn btn-primary btn-block" href="crud_cadastrocliente">Create Account</a> -->
-                                                <input type="submit" value="Cadastrar">
+                                                <input type="submit" value="Atualizar" name="atualizar">
                                             </div>
                                             </div>
                                         </form>
