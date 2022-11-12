@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Static Navigation - SB Admin</title>
+    <title>Lista de Pacientes</title>
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/47e9777af5.js" crossorigin="anonymous"></script>
 </head>
@@ -48,12 +48,12 @@
                         <div class="sb-sidenav-menu-heading">Core</div>
                         <a class="nav-link" href="index.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Dashboard
+                            Inicio
                         </a>
                         <div class="sb-sidenav-menu-heading">Interface</div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Layouts
+                            Registros
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
@@ -93,15 +93,7 @@
                                 </div>
                             </nav>
                         </div>
-                        <div class="sb-sidenav-menu-heading">Addons</div>
-                        <a class="nav-link" href="charts.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                            Charts
-                        </a>
-                        <a class="nav-link" href="tables.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Tables
-                        </a>
+
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
@@ -113,59 +105,58 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Static Navigation</h1>
+                    <h1 class="mt-4">Pacientes Cadastrados</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
 
-                        <li class="breadcrumb-item active">Static Navigation</li>
+                        <li class="breadcrumb-item active">Lista de Pacientes </li>
                     </ol>
                     <div class="card mb-4">
                         <div class="card-body">
-                           
-                            <table border="1">
-                                <thead>
-                                    <th>ID</th>
-                                    <th>paciente</th>
-                                    <th>nacionalidade</th>
-                                    <th>idade</th>
-                                    <th>data</th>
-                                    <th>peso</th>
-                                    <th colspan="2">Ação</th>
-                                </thead>
+                            <center>
+                                <table border="1">
+                                    <thead>
+                                        <th>ID</th>
+                                        <th>paciente</th>
+                                        <th>nacionalidade</th>
+                                        <th>idade</th>
+                                        <th>data</th>
+                                        <th>peso</th>
+                                        <th colspan="2">Ação</th>
+                                    </thead>
 
-                                <?php
-                                include('conecta.php');
-                                $dados = mysqli_query($conexao, "SELECT * FROM `cadastro_paciente`");
-                                while ($item = mysqli_fetch_assoc($dados)) {
-                                ?>
-                                    <tr>
-                                        <td><?= $item['id'] ?></td>
-                                        <td><?= $item['paciente'] ?></td>
-                                        <td><?= $item['nacionalidade'] ?></td>
-                                        <td><?= $item['idade'] ?></td>
-                                        <td><?= $item['data'] ?></td>
-                                        <td><?= $item['peso'] ?></td>
-                                        <td><a href="editarpaciente.php?id=<?php echo $item["id"]; ?>"><i class="fa fa-pencil"></a></td>
-                                        <td onclick="verifica('<?= $item["id"]; ?>')"><a href="#"><i class="fa fa-trash"></a></td>
-                                    </tr>
-                                <?php } ?>
-                            </table>
-                            <script>
-                                function verifica(recid) {
-                                    if (confirm("Tem certeza que deseja Excluir permanentemente este LIVRO?")) {
-                                        window.location = "excluirpaciente.php?id=" + recid
+                                    <?php
+                                    include('conecta.php');
+                                    $dados = mysqli_query($conexao, "SELECT * FROM `cadastro_paciente`");
+                                    while ($item = mysqli_fetch_assoc($dados)) {
+                                    ?>
+                                        <tr>
+                                            <td><?= $item['id'] ?></td>
+                                            <td><?= $item['paciente'] ?></td>
+                                            <td><?= $item['nacionalidade'] ?></td>
+                                            <td><?= $item['idade'] ?></td>
+                                            <td><?= $item['data'] ?></td>
+                                            <td><?= $item['peso'] ?></td>
+                                            <td><a href="editarpaciente.php?id=<?php echo $item["id"]; ?>"><i class="fa fa-pencil"></a></td>
+                                            <td onclick="verifica('<?= $item["id"]; ?>')"><a href="#"><i class="fa fa-trash"></a></td>
+                                        </tr>
+                                    <?php } ?>
+                                </table>
+                                <script>
+                                    function verifica(recid) {
+                                        if (confirm("Tem certeza que deseja Excluir permanentemente este Paciente?")) {
+                                            window.location = "excluirpaciente.php?id=" + recid
+                                        }
+
                                     }
-
-                                }
-                            </script>
-
+                                </script>
+                            </center>
                         </div>
                     </div>
                     <div style="height: 100vh"></div>
                     <div class="card mb-4">
-                        <div class="card-body">When scrolling, the navigation stays at the top of the page. This is the end of the static navigation demo.</div>
+
                     </div>
-                </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">

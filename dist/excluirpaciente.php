@@ -1,9 +1,10 @@
 <?php
-require('conecta.php');
+include ("conecta.php");
 
-$recid = $_GET['id'];
+$recid= intval($_GET['id']);
 
-$query = "DELETE  FROM `cadastro_cliente` WHERE id=$recid";
+
+mysqli_query($conecta, "DELETE FROM livros WHERE id=$recid");
 
 
 header("location:listapaciente.php");
