@@ -4,10 +4,16 @@ include ("conecta.php");
 $recid= intval($_GET['id']);
 
 
-mysqli_query($conecta, "DELETE FROM livros WHERE id=$recid");
+$query ="DELETE FROM `cadastro_paciente` WHERE id=$recid";
 
 
-header("location:listapaciente.php");
+$result = mysqli_query($conexao,$query);
+
+if(!$result){
+    echo("Não foi possivel Excluir esse contato");
+}else{
+    header('location: listapaciente.php');
+}
 
 
 ?>

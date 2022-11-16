@@ -56,13 +56,14 @@ if (isset($_POST['email'])) {
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="password.html">Forgot Password?</a>
-                                                <a class="btn btn-primary" href="index.html">Login</a>
+                                                <input class="btn btn-primary" type="submit" value="Login">
+                                              
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
                                         <div class="small"><a href="register.php">Need an account? Sign up!</a>
-                                    <input type="submit" value="Login"></div>
+                                    
                                     </div>
                                 </div>
                             </div>

@@ -2,7 +2,7 @@
 
 require('conecta.php');
 
-$id = $POST['id'];
+$id = $_POST['id'];
 $paciente = $_POST['paciente'];
 $nacionalidade = $_POST['nacionalidade'];
 $idade = $_POST['idade'];
