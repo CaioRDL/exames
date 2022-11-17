@@ -10,7 +10,7 @@ if (isset($_POST['email'])) {
     $usuario = $result->fetch_assoc();
 
     if (password_verify($senha, $usuario['senha'])) {
-        header('location: index.html');
+        header('location: inicio.html');
     } else {
         echo "Senha não confere!";
     }

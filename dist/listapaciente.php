@@ -46,7 +46,7 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Core</div>
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="inicio.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Inicio
                         </a>
@@ -107,7 +107,7 @@
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Pacientes Cadastrados</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="inicio.html">Inicio</a></li>
 
                         <li class="breadcrumb-item active">Lista de Pacientes </li>
                     </ol>
