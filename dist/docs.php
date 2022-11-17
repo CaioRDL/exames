@@ -8,7 +8,7 @@ if(isset($_FILES['arquivo'])){
         die ("falha ao enviar o arquivo");
     if($arquivo['size']>6000000)
         die ("arquivo muito grande!!! Max:2Mb");
-    $pasta="arquivos/";
+    $pasta="./arquivos";
     $nomedoarquivo=$arquivo['name'];
     $novoNomedoArquivo= uniqid();
     $extensao = strtolower(pathinfo($nomedoarquivo, PATHINFO_EXTENSION));
@@ -37,7 +37,7 @@ if(isset($_FILES['arquivo'])){
         <title>upload de arquivos</title>
     </head>
     <body>
-        <form method="POST" enctype="multipart/form-data" action="novoenvioarquivo.php">
+        <form method="POST" enctype="multipart/form-data" action="docs.php">
         <p><label for="">Selecione um arquivo</label>
         <input name="arquivo" type="file"></p>
         <button name="upload" type="submit"value="escolha">Enviar arquivo</button>
