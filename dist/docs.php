@@ -8,7 +8,7 @@ if (isset($_FILES['arquivo'])) {
         die("falha ao enviar o arquivo");
     if ($arquivo['size'] > 6000000)
         die("arquivo muito grande!!! Max:2Mb");
-    $pasta = "arquivos/";
+    $pasta = "./arquivos/";
     $nomedoarquivo = $arquivo['name'];
     $novoNomedoArquivo = uniqid();
     $extensao = strtolower(pathinfo($nomedoarquivo, PATHINFO_EXTENSION));
@@ -49,7 +49,7 @@ if (isset($_FILES['arquivo'])) {
 
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+        <a class="navbar-brand ps-3" href="inicio.html">Start Bootstrap</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
@@ -156,10 +156,9 @@ if (isset($_FILES['arquivo'])) {
                                 <table border="1">
                                     <thead>
                                         <th>ID</th>
-                                        <th>nome</th>
                                         <th>PATH</th>
+                                        <th>Nome</th>
                                         <th>DATA ENVIO</th>
-
                                         <th colspan="2">Ação</th>
                                     </thead>
 
@@ -170,8 +169,8 @@ if (isset($_FILES['arquivo'])) {
                                     ?>
                                         <tr>
                                             <td><?= $item['id_capa'] ?></td>
-                                            <td><?= $item['nome'] ?></td>
                                             <td><?= $item['path'] ?></td>
+                                            <td><?= $item['nome'] ?></td>
                                             <td><?= $item['data_envio'] ?></td>
                                             <td onclick="verifica('<?= $item["id_capa"]; ?>')"><a href="#"><i class="fa fa-trash"></a></td>
                                         </tr>
