@@ -50,7 +50,7 @@ if (isset($_FILES['arquivo'])) {
 
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="inicio.html">Start Bootstrap</a>
+        <a class="navbar-brand ps-3" href="inicio.php">Dashboard</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
@@ -71,7 +71,7 @@ if (isset($_FILES['arquivo'])) {
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    <li><a  href="home.php" class="dropdown-item" href="#!">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -82,7 +82,7 @@ if (isset($_FILES['arquivo'])) {
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Core</div>
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="inicio.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Inicio
                         </a>
@@ -97,37 +97,22 @@ if (isset($_FILES['arquivo'])) {
                                 <a class="nav-link" href="cadastropaciente.php">Cadastro Paciente</a>
                                 <a class="nav-link" href="listapaciente.php">Lista de Paciente</a>
                                 <a class="nav-link" href="docs.php">Lista de Documentos</a>
-                                <a class="nav-link" href="select.php">Seleção de Pacientes</a>
+
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                             Pages
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                    Authentication
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="login.html">Login</a>
-                                        <a class="nav-link" href="register.html">Register</a>
-                                        <a class="nav-link" href="password.html">Forgot Password</a>
-                                    </nav>
-                                </div>
-                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                    Error
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                                                           
+                                        <a class="nav-link" href="401.html">Contato</a>
+                                            <a class="nav-link" href="404.html">Quem Somos</a>
                                 <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="401.html">401 Page</a>
-                                        <a class="nav-link" href="404.html">404 Page</a>
-                                        <a class="nav-link" href="500.html">500 Page</a>
-                                    </nav>
+
                                 </div>
                             </nav>
                         </div>
@@ -136,16 +121,16 @@ if (isset($_FILES['arquivo'])) {
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Logged in as:</div>
-                    Start Bootstrap
+                    
                 </div>
             </nav>
         </div>
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Pacientes Cadastrados</h1>
+                    <h1 class="mt-4">Documentos</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="inicio.php">Inicio</a></li>
 
                         <li class="breadcrumb-item active">Lista de Pacientes </li>
                     </ol>
@@ -173,7 +158,6 @@ if (isset($_FILES['arquivo'])) {
 
                                         <tr>
                                             <td><?= $item['id_capa'] ?></td>
-                                            <td><?= $item['path'] ?></td>
                                             <td><?= $item['nome'] ?></td>
                                             <td><?= $item['data_envio'] ?></td>
                                             <td onclick="verifica('<?= $item["id_capa"]; ?>')"><a href="#"><i class="fa fa-trash"></a></td>

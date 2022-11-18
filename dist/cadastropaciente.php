@@ -15,7 +15,7 @@
 <body>
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+        <a class="navbar-brand ps-3" href="inicio.php">Dashboard</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
@@ -35,7 +35,7 @@
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    <li><a  href="home.php" class="dropdown-item" href="#!">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -46,7 +46,7 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Core</div>
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="index.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Inicio
                         </a>
@@ -61,7 +61,7 @@
                                 <a class="nav-link" href="cadastropaciente.php">Registro de Paciente</a>
                                 <a class="nav-link" href="listapaciente.php">Lista de Paciente</a>
                                 <a class="nav-link" href="docs.php">Lista de Documentos</a>
-                                <a class="nav-link" href="select.php">Seleção de Pacientes</a>
+
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -162,9 +162,8 @@
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <div class="form-floating mb-3 mb-md-0">
-                                                                            <input value="<?php echo @$cadastro_paciente['peso']; ?>" class="form-control" id="inputpeso" type="number" placeholder="Digite o Peso do Paciente" name="peso" />
-                                                                            <label for="peso">Digite o Peso do
-                                                                                Paciente</label>
+                                                                            <input value="<?php echo @$cadastro_paciente['peso']; ?>" class="form-control" id="inputpeso" type="text" placeholder="Digite o Peso do Paciente" name="peso" />
+                                                                            <label for="peso">Digite o Peso do Paciente</label>
                                                                         </div>
                                                                     </div>
                                                                 </div>
