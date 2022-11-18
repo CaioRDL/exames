@@ -1,34 +1,10 @@
 <?php
+require('conecta.php');
+$query_paciente = "SELECT * FROM `cadastro_paciente`";
+$result_paciente = mysqli_query($conexao, $query_paciente);
 
-include("conecta.php");
 
-if (isset($_FILES['arquivo'])) {
-    $arquivo = $_FILES['arquivo'];
-    if ($arquivo['error'])
-        die("falha ao enviar o arquivo");
-    if ($arquivo['size'] > 6000000)
-        die("arquivo muito grande!!! Max:2Mb");
-    $pasta = "./arquivos/";
-    $nomedoarquivo = $arquivo['name'];
-    $novoNomedoArquivo = uniqid();
-    $extensao = strtolower(pathinfo($nomedoarquivo, PATHINFO_EXTENSION));
 
-    if ($extensao != "jpg" && $extensao != 'png' &&  $extesao != 'pdf'){
-
-    
-        die("Tipo de arquivo não aceito");
-    }
-    $path = $pasta . $novoNomedoArquivo . "." . $extensao;
-
-    $deu_certo = move_uploaded_file($arquivo['tmp_name'], $path);
-    if ($deu_certo) {
-        mysqli_query($conexao, "INSERT INTO capa(nome,path)  VALUES('$nomedoarquivo','$path')");
-        header("location: docs.php");
-        echo "<p>arquivo enviado com sucesso</p>";
-    } else {
-        echo "<p>falha ao enviar o arquivo</p>";
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -47,10 +23,9 @@ if (isset($_FILES['arquivo'])) {
 
 <body>
 
-
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="inicio.html">Start Bootstrap</a>
+        <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
@@ -60,7 +35,6 @@ if (isset($_FILES['arquivo'])) {
                 <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
             </div>
         </form>
-        <form method="POST" enctype="multipart/form-data" action="docs.php"> 
         <!-- Navbar-->
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
@@ -82,7 +56,7 @@ if (isset($_FILES['arquivo'])) {
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Core</div>
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="inicio.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Inicio
                         </a>
@@ -145,49 +119,42 @@ if (isset($_FILES['arquivo'])) {
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Pacientes Cadastrados</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="inicio.html">Inicio</a></li>
 
                         <li class="breadcrumb-item active">Lista de Pacientes </li>
                     </ol>
                     <div class="card mb-4">
                         <div class="card-body">
                             <center>
-                            <p><label for="">Selecione um arquivo</label>
-            <input name="arquivo" type="file">
-        </p>
-        <button name="upload" type="submit" value="escolha">Enviar arquivo</button>
-                                <table border="1">
-                                    <thead>
-                                        <th>ID</th>
-                                        <th>PATH</th>
-                                        <th>Nome</th>
-                                        <th>DATA ENVIO</th>
-                                        <th colspan="2">Ação</th>
-                                    </thead>
+                                <?php
+                                while ($linha = mysqli_fetch_assoc($result_paciente)) {
+                                ?>
+                                
+                                <?php  } ?>
+                                <select name="paciente" id="paciente" >
+                                <option value="">Selecione um Paciente</option>
+                                <option value="<?php echo $linha['paciente']; ?>"></option>
+                                
+                                </select><br><br>
+
+
+
+
+
+
 
                                     <?php
-                                    include('conecta.php');
-                                    $dados = mysqli_query($conexao, "SELECT * FROM `capa`");
-                                    while ($item = mysqli_fetch_assoc($dados)) {
+                                    while ($linha = mysqli_fetch_assoc($result_paciente)) {
                                     ?>
 
-                                        <tr>
-                                            <td><?= $item['id_capa'] ?></td>
-                                            <td><?= $item['path'] ?></td>
-                                            <td><?= $item['nome'] ?></td>
-                                            <td><?= $item['data_envio'] ?></td>
-                                            <td onclick="verifica('<?= $item["id_capa"]; ?>')"><a href="#"><i class="fa fa-trash"></a></td>
-                                        </tr>
-                                    <?php } ?>
-                                </table>
-                                <script>
-                                    function verifica(recid) {
-                                        if (confirm("Tem certeza que deseja Excluir permanentemente este Paciente?")) {
-                                            window.location = "excluirdocs.php?id_capa=" + recid
-                                        }
+                                        <option value="<?php echo $linha['id']; ?>"><?php echo $linha['paciente']; ?></option>
+                                    <?php  } ?>
+                                </select><br><br>
 
-                                    }
-                                </script>
+                                <input type="date" name="data" id="data" placeholder="Data da Venda" required>
+
+                                <input type="reset" value="Limpar" name="limpar" class="bttn__limpar">
+                                <input type="submit" value="Enviar" name="enviar" class="bttn_salvar">
                             </center>
                         </div>
                     </div>

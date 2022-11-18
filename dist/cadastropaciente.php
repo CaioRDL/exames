@@ -60,6 +60,8 @@
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="cadastropaciente.php">Registro de Paciente</a>
                                 <a class="nav-link" href="listapaciente.php">Lista de Paciente</a>
+                                <a class="nav-link" href="docs.php">Lista de Documentos</a>
+                                <a class="nav-link" href="select.php">Seleção de Pacientes</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -90,7 +92,7 @@
                             </nav>
                         </div>
                         <div class="sb-sidenav-menu-heading">Addons</div>
-                   
+
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
@@ -168,12 +170,12 @@
                                                                 </div>
                                                                 <div class="mt-4 mb-0">
                                                                     <!-- <div class="d-grid"><a class="btn btn-primary btn-block" href="crud_cadastrocliente">Create Account</a> -->
-                                                                   
+
                                                                 </div>
                                                         </div>
                                                         <input type="submit" value="Cadastrar">
                                                         </form>
-                                                        
+
                                                     </div>
                                                     <div class="card-footer text-center py-3">
 
@@ -190,11 +192,11 @@
 
     </div>
     </main>
- 
-            
-                </div>
-            </div>
-        </div>
+
+
+    </div>
+    </div>
+    </div>
     </footer>
     </div>
     </div>
