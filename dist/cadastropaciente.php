@@ -46,7 +46,7 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Core</div>
-                        <a class="nav-link" href="index.php">
+                        <a class="nav-link" href="inicio.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Inicio
                         </a>
@@ -106,7 +106,7 @@
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Cadastros</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="inicio.php">Inicio</a></li>
 
                         <li class="breadcrumb-item active">Regustro de Paciente</li>
                     </ol>
@@ -130,9 +130,6 @@
                                                                     <div class="col-md-6">
                                                                         <div class="form-floating mb-3 mb-md-0">
 
-                                                                            <input value="<?php echo @$cadastro_paciente['id']; ?>" class="form-control" id="inputFirstName" type="text" placeholder="Digite o ID do paciente" name="id" />
-                                                                            <label for="id">Digite o ID do
-                                                                                paciente</label>
                                                                         </div>
 
                                                                         <div class="form-floating mb-3 mb-md-0">
@@ -145,6 +142,7 @@
                                                                         <div class="form-floating">
                                                                             <input value="<?php echo @$cadastro_paciente['nacionalidade']; ?>" class="form-control" id="inputnacionalidade" type="text" placeholder="Nacionalidade" name="nacionalidade" />
                                                                             <label for="nacionalidade">Nacionalidade</label>
+                                                                            
                                                                         </div>
                                                                     </div>
                                                                 </div>
