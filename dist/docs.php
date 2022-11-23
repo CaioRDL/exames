@@ -144,10 +144,8 @@ if (isset($_FILES['arquivo'])) {
                                 <table border="1">
                                     <thead>
                                         <th>ID</th>
-                                        <th>PATH</th>
                                         <th>Nome</th>
                                         <th>DATA ENVIO</th>
-                                        <th colspan="2">Ação</th>
                                     </thead>
 
                                     <?php
