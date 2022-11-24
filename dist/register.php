@@ -36,32 +36,32 @@ if (isset($_POST['email'])) {
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" />
-                                                        <label for="inputFirstName">First name</label>
+                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" required/>
+                                                        <label for="inputFirstName">Nome</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" />
-                                                        <label for="inputLastName">Last name</label>
+                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" required/>
+                                                        <label for="inputLastName">Sobrenome</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="email"/>
-                                                <label for="inputEmail">Email address</label>
+                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="email" required/>
+                                                <label for="inputEmail">Email </label>
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPassword" type="password" placeholder="Create a password" name="senha" />
-                                                        <label for="inputPassword">Password</label>
+                                                        <input class="form-control" id="inputPassword" type="password" placeholder="Create a password" name="senha" required />
+                                                        <label for="inputPassword">Senha</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPasswordConfirm" type="password" placeholder="Confirm password" />
-                                                        <label for="inputPasswordConfirm">Confirm Password</label>
+                                                        <input class="form-control" id="inputPasswordConfirm" type="password" placeholder="Confirm password" required />
+                                                        <label for="inputPasswordConfirm">Confirma a sua senha</label>
                                                     </div>
                                                 </div>
                                             </div>

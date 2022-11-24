@@ -9,10 +9,10 @@ if (isset($_POST['email'])) {
 
     $usuario = $result->fetch_assoc();
 
-    if (password_verify($senha, $usuario['senha'])) {
+    if (password_verify(@$senha, @$usuario['senha'])) {
         header('location: inicio.php');
     } else {
-        echo "Senha não confere!";
+        echo "<h2>Usuário ou Senha está incorreto!</h2>";
     }
 }
 
@@ -44,7 +44,7 @@ if (isset($_POST['email'])) {
                                         <form>
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="email"/>
-                                                <label for="inputEmail">Email address</label>
+                                                <label for="inputEmail">Email </label>
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputPassword" type="password" placeholder="Password" name="senha"/>
