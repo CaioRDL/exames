@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Nov-2022 às 06:19
--- Versão do servidor: 10.4.25-MariaDB
--- versão do PHP: 7.4.30
+-- Tempo de geração: 25-Nov-2022 às 13:22
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,9 +42,9 @@ CREATE TABLE `cadastro_paciente` (
 
 INSERT INTO `cadastro_paciente` (`id`, `paciente`, `nacionalidade`, `idade`, `data`, `peso`) VALUES
 (0, 'CAio Moreira', 'EUROPA', 25, '2000-08-19', '60,800'),
-(11, '[paciente]', '[nacionalidade]', 0, '0000-00-00', '[peso]'),
+(11, 'Mey Ling', 'China', 36, '2022-08-10', '35'),
 (12, 'Bianca', 'Ramos', 23, '2022-11-15', '68,600'),
-(13, 'Caio Ramos de Lima', 'Brasil', 22, '9910-08-07', ''),
+(13, 'Gustavo Gomes ', 'Brasil', 22, '9910-08-07', '78,800'),
 (14, 'Biaca de Matos Bueno', 'Brasil', 23, '1998-08-28', '68'),
 (15, 'Caio Ramos de Lima', 'Brasil', 22, '2000-08-07', '69,800'),
 (16, 'Caio Ramos de Lima', 'Brasil', 22, '2000-08-07', '69,800'),
@@ -52,8 +52,8 @@ INSERT INTO `cadastro_paciente` (`id`, `paciente`, `nacionalidade`, `idade`, `da
 (18, 'Cleonilda Ramos', 'Brasileira', 25, '1995-09-08', '78'),
 (19, 'Hudo Ramos', 'Russia', 28, '2005-09-07', '78,500'),
 (20, 'Luis Carlos de Oliveira Pereira', 'CANADA', 32, '2000-09-07', '130'),
-(21, '', '', 0, '0000-00-00', ''),
-(22, '', '', 0, '0000-00-00', ''),
+(21, 'Ketlyn Pereira de Oliveira', 'Turquia ', 38, '2022-10-03', '98,800'),
+(22, 'Alvaro Gustavo', 'Portugal ', 42, '2022-11-28', '58,800'),
 (23, 'Lucas Gabriel', 'Canada', 22, '1999-08-20', '68'),
 (24, 'Luis Carlos', 'EUA', 32, '2020-10-05', '120'),
 (25, 'Fernando Moreira', 'EUROPA', 25, '2000-08-19', '68'),
@@ -62,8 +62,12 @@ INSERT INTO `cadastro_paciente` (`id`, `paciente`, `nacionalidade`, `idade`, `da
 (28, 'Luis Faustino da Silva', 'Argentina', 36, '2022-11-06', '88,600'),
 (29, 'Lucas Da Silva', 'Uruguai ', 30, '2022-11-20', '58,900'),
 (30, 'Kevin Santos', 'Russia', 27, '2021-08-24', '98,600'),
-(31, 'Soy Fong', 'China', 26, '2022-01-31', '78+600'),
-(32, 'Mey Lee', 'Japão', 27, '2022-11-06', '85,600');
+(31, 'Soy Fong', 'China', 26, '2022-01-31', '78,600'),
+(32, 'Mey Lee', 'Japão', 27, '2022-11-06', '85,600'),
+(33, 'Ana Julia', 'Argentina', 22, '2022-10-30', '58,800'),
+(34, 'Ariê Fernandes', 'Brasil', 24, '2022-11-02', '65,300'),
+(35, 'Luiza dos Santos', 'Chile', 20, '2022-11-02', '58,500'),
+(36, 'Laura Gonçalves', 'Venezuela', 14, '2022-11-08', '54,500');
 
 -- --------------------------------------------------------
 
@@ -129,7 +133,8 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`email`, `senha`) VALUES
 ('ramoscaio69@gmail.com', '$2y$10$Z97t.i4V5erdMK9Ho0koH.sxWkGHjPRvH.yWtMW8Y1Dt2FW24Xqdu'),
 ('admin@gmail.com', '$2y$10$FsVe9CzNkJ0GQj3wQNiQ3emF4fO9bg/l/i2PNvNTvWQF5fx2SgT6O'),
-('alvarogustavo@gmail.com', '$2y$10$liqIHI7f7w7jPzrSej2O3OHqKB9YcTDPEcA2sT2n9.b/93tEXeJYi');
+('alvarogustavo@gmail.com', '$2y$10$liqIHI7f7w7jPzrSej2O3OHqKB9YcTDPEcA2sT2n9.b/93tEXeJYi'),
+('melinadossantos@gmail.com', '$2y$10$tuqE1N5rgPz8.eLpfYT6VeAN/IaawTBco.NodYgjPh764xMpBdApG');
 
 --
 -- Índices para tabelas despejadas
@@ -161,7 +166,7 @@ ALTER TABLE `editar_paciente`
 -- AUTO_INCREMENT de tabela `cadastro_paciente`
 --
 ALTER TABLE `cadastro_paciente`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de tabela `capa`
