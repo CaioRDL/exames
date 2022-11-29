@@ -22,7 +22,7 @@ if($erro){
     $sql="UPDATE cadastro_paciente SET
     paciente='$paciente',
     nacionalidade='$nacionalidade',
-    idade='$idade',
+    idade='$idade',l
     data='$data',
     peso='$peso'  WHERE id='$id' ";
 
