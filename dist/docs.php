@@ -13,7 +13,7 @@ if (isset($_FILES['arquivo'])) {
     $novoNomedoArquivo = uniqid();
     $extensao = strtolower(pathinfo($nomedoarquivo, PATHINFO_EXTENSION));
 
-    if ($extensao != "jpg" && $extensao != 'png' &&  $extesao != 'pdf'){
+    if ($extensao != "jpg" && $extensao != 'png' &&  $extensao != 'pdf'){
 
     
         die("Tipo de arquivo não aceito");
