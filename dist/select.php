@@ -136,13 +136,6 @@ $result_paciente = mysqli_query($conexao, $query_paciente);
                                 <option value="<?php echo $linha['paciente']; ?>"></option>
                                 
                                 </select><br><br>
-
-
-
-
-
-
-
                                     <?php
                                     while ($linha = mysqli_fetch_assoc($result_paciente)) {
                                     ?>
