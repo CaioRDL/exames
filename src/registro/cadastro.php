@@ -1,14 +1,3 @@
-<?php
-if (isset($_POST['email'])) {
-    require('conecta.php');
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-    $hash = password_hash($senha, PASSWORD_DEFAULT);
-    $query = "INSERT INTO `usuarios`(`email`, `senha`) VALUES ('$email','$hash')";
-    mysqli_query($conexao, $query);
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,12 +6,12 @@ if (isset($_POST['email'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Register - SB Admin</title>
+        <title>..::Registro::..</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
-    <form action="" method="post">
+    <form action="validaCadastro.php" method="post">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -30,25 +19,20 @@ if (isset($_POST['email'])) {
                         <div class="row justify-content-center">
                             <div class="col-lg-7">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Criar Conta</h3></div>
                                     <div class="card-body">
                                         <form>
                                             <div class="row mb-3">
-                                                <div class="col-md-6">
+                                                <div class="col-md-12">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" required/>
-                                                        <label for="inputFirstName">Nome</label>
+                                                        <input class="form-control" id="inputFirstName" type="text" name="nome"placeholder="Nome Completo" required/>
+                                                        <label for="inputFirstName">Nome Completo</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-floating">
-                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" required/>
-                                                        <label for="inputLastName">Sobrenome</label>
-                                                    </div>
-                                                </div>
+                                                
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="email" required/>
+                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="usuario" required/>
                                                 <label for="inputEmail">Email </label>
                                             </div>
                                             <div class="row mb-3">
@@ -60,7 +44,7 @@ if (isset($_POST['email'])) {
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPasswordConfirm" type="password" placeholder="Confirm password" required />
+                                                        <input class="form-control" id="inputPasswordConfirm" type="password" placeholder="Confirm password" name="" required />
                                                         <label for="inputPasswordConfirm">Confirma a sua senha</label>
                                                     </div>
                                                 </div>
@@ -77,7 +61,7 @@ if (isset($_POST['email'])) {
                                     </div>
                                     <div class="card-footer text-center py-3">
                                         
-                                        <div class="small"><a href="home.php">Have an account? Go to login</a></div>
+                                        <div class="small"><a href="..\home.php">Fazer Login</a></div>
                                     </div>
                                 </div>
                             </div>

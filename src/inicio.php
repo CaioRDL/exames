@@ -178,7 +178,7 @@
                                         </tr>
                                         </thead>
                                         <?php
-                                    include('conecta.php');
+                                    include('configs/conecta.php');
                                     $dados = mysqli_query($conexao, "SELECT * FROM `cadastro_paciente`");
                                     while ($item = mysqli_fetch_assoc($dados)) {
                                     ?>
